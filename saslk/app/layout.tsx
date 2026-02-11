@@ -1,20 +1,38 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
+import ClientBody from "@/components/ClientBody";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "SASLK",
-  description: "SASLK",
+  title: "SASLK | Software Solutions & Digital Innovation",
+  description:
+    "SASLK delivers cutting-edge software development, cloud solutions, and digital transformation services. We build scalable, modern applications that drive business growth.",
+  keywords: [
+    "software development",
+    "digital transformation",
+    "cloud solutions",
+    "web development",
+    "mobile apps",
+    "SASLK",
+  ],
+  openGraph: {
+    title: "SASLK | Software Solutions & Digital Innovation",
+    description:
+      "We build scalable, modern applications that drive business growth.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -25,9 +43,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${outfit.variable}`}
+        style={{ fontFamily: "var(--font-inter), sans-serif" }}
       >
-        {children}
+        <ClientBody>{children}</ClientBody>
       </body>
     </html>
   );
