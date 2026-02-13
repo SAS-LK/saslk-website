@@ -3,17 +3,23 @@
 import React, { useState } from 'react';
 import { useDevice } from '@/contexts/DeviceContext';
 
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 const navLinks = [
-    { label: 'Home', href: '#hero' },
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Team', href: '#team' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/#hero' },
+    { label: 'About', href: '/#about' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Projects', href: '/#projects' },
+    { label: 'Pricing', href: '/#pricing' },
+    { label: 'Payment', href: '/payment' },
+    { label: 'Team', href: '/#team' },
+    { label: 'Contact', href: '/#contact' },
 ];
 
 const Navbar: React.FC = () => {
     const { isDesktop } = useDevice();
+    const pathname = usePathname();
     const [menuOpen, setMenuOpen] = useState(false);
 
     const navStyle: React.CSSProperties = {
@@ -25,7 +31,7 @@ const Navbar: React.FC = () => {
         background: 'rgba(255, 255, 255, 0.85)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
-        borderBottom: '1px solid var(--border-subtle)',
+        borderBottom: 'none',
         transition: 'all var(--transition-base)',
     };
 
@@ -120,7 +126,7 @@ const Navbar: React.FC = () => {
         <>
             <nav style={navStyle}>
                 <div style={containerStyle}>
-                    <a href="#hero" style={{ display: 'block' }}>
+                    <Link href="/#hero" style={{ display: 'block' }}>
                         <img
                             src="/logo.png"
                             alt="SASLK"
@@ -138,13 +144,13 @@ const Navbar: React.FC = () => {
                                 e.currentTarget.style.filter = 'grayscale(100%) brightness(0)';
                             }}
                         />
-                    </a>
+                    </Link>
 
                     {isDesktop ? (
                         <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
                             <div style={{ display: 'flex', gap: '2rem' }}>
                                 {navLinks.map((link) => (
-                                    <a
+                                    <Link
                                         key={link.href}
                                         href={link.href}
                                         style={linkStyle}
@@ -156,11 +162,11 @@ const Navbar: React.FC = () => {
                                         }}
                                     >
                                         {link.label}
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
-                            <a
-                                href="#contact"
+                            <Link
+                                href="/#contact"
                                 style={ctaStyle}
                                 onMouseEnter={(e) => {
                                     e.currentTarget.style.background = 'var(--gradient-brand-hover)';
@@ -173,8 +179,8 @@ const Navbar: React.FC = () => {
                                     e.currentTarget.style.boxShadow = 'none';
                                 }}
                             >
-                                Get Started
-                            </a>
+                                Book a Call
+                            </Link>
                         </div>
                     ) : (
                         <button
@@ -203,7 +209,7 @@ const Navbar: React.FC = () => {
             {!isDesktop && (
                 <div style={overlayStyle}>
                     {navLinks.map((link) => (
-                        <a
+                        <Link
                             key={link.href}
                             href={link.href}
                             style={mobileLinkStyle}
@@ -216,15 +222,15 @@ const Navbar: React.FC = () => {
                             }}
                         >
                             {link.label}
-                        </a>
+                        </Link>
                     ))}
-                    <a
-                        href="#contact"
+                    <Link
+                        href="/#contact"
                         onClick={() => setMenuOpen(false)}
                         style={{ ...ctaStyle, fontSize: '1.1rem', padding: '0.8rem 2rem', marginTop: '1rem' }}
                     >
-                        Get Started
-                    </a>
+                        Book a Call
+                    </Link>
                 </div>
             )}
         </>

@@ -328,6 +328,12 @@ p {
 }
 
 /* Scrollbar */
+/* Scrollbar hidden by default for app-like feel */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -343,4 +349,5 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-primary);
-}
+} 
+*/

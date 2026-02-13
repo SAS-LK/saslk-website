@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
         position: 'relative',
         overflow: 'hidden',
         background: 'var(--gradient-hero)',
-        padding: isMobile ? '6rem 1.5rem 4rem' : '8rem 2rem 4rem',
+        padding: isMobile ? '2rem 1.5rem 4rem' : '4rem 2rem 4rem',
     };
 
     // Animated background shapes
@@ -85,8 +85,22 @@ const HeroSection: React.FC = () => {
                         That Drive Growth
                     </h1>
 
-                    <p
+                    <div
                         className="animate-fade-in-up delay-200"
+                        style={{
+                            fontSize: 'clamp(1.2rem, 2vw, 1.5rem)',
+                            fontWeight: 500,
+                            marginBottom: '1.5rem',
+                            color: '#000',
+                            letterSpacing: '-0.02em',
+                            fontFamily: 'var(--font-outfit), sans-serif',
+                        }}
+                    >
+                        Execution Today. Excellence Tomorrow.
+                    </div>
+
+                    <p
+                        className="animate-fade-in-up delay-300"
                         style={{
                             fontSize: 'clamp(1rem, 1.5vw, 1.2rem)',
                             maxWidth: isDesktop ? '520px' : '600px',
@@ -100,7 +114,7 @@ const HeroSection: React.FC = () => {
                     </p>
 
                     <div
-                        className="animate-fade-in-up delay-300"
+                        className="animate-fade-in-up delay-400"
                         style={{
                             display: 'flex',
                             gap: '1rem',

@@ -11,19 +11,16 @@ import ContactSection from '@/sections/ContactSection';
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <ProjectsSection />
-        <StatsSection />
-        <TeamSection />
-        <TestimonialsSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </>
+    // Navbar and Footer are now in ClientBody (layout)
+    <main>
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <ProjectsSection />
+      <StatsSection />
+      <TeamSection />
+      <TestimonialsSection />
+      <ContactSection />
+    </main>
   );
 }

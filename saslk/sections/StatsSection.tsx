@@ -6,10 +6,10 @@ import SectionWrapper from '@/components/SectionWrapper';
 import AnimatedCounter from '@/components/AnimatedCounter';
 
 const stats = [
-    { target: 150, label: 'Projects Delivered', suffix: '+', icon: '🚀' },
-    { target: 50, label: 'Happy Clients', suffix: '+', icon: '😊' },
-    { target: 25, label: 'Team Members', suffix: '', icon: '👥' },
-    { target: 5, label: 'Years of Excellence', suffix: '+', icon: '🏆' },
+    { target: 20, label: 'Projects Delivered', suffix: '+', icon: '🚀' },
+    { target: 10, label: 'Happy Clients', suffix: '+', icon: '😊' },
+    { target: 5, label: 'Team Members', suffix: '', icon: '👥' },
+    { target: 1, label: 'Years of Excellence', suffix: '+', icon: '🏆' },
 ];
 
 const StatsSection: React.FC = () => {
