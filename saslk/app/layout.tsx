@@ -1,24 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Exo_2 } from "next/font/google";
 import "./globals.css";
 import ClientBody from "@/components/ClientBody";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const outfit = Outfit({
-  variable: "--font-outfit",
+const exo2 = Exo_2({
+  variable: "--font-exo2",
   subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "SASLK | Software Solutions & Digital Innovation",
+  title: "SASLK",
   description:
-    "SASLK delivers cutting-edge software development, cloud solutions, and digital transformation services. We build scalable, modern applications that drive business growth.",
+    "Software Solutions & Digital Innovation",
   keywords: [
     "software development",
     "digital transformation",
@@ -43,8 +37,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${outfit.variable}`}
-        style={{ fontFamily: "var(--font-inter), sans-serif" }}
+        className={`${exo2.variable}`}
+        style={{ fontFamily: "var(--font-exo2), sans-serif" }}
       >
         <ClientBody>{children}</ClientBody>
       </body>

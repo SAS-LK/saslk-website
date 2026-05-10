@@ -15,14 +15,14 @@ const ClientBody: React.FC<ClientBodyProps> = ({ children }) => {
             <Navbar />
             <div
                 style={{
-                    marginTop: '74px', // Clear navbar (approx 72px) + 2px gap for visibility
+                    marginTop: '56px', // Clear navbar (52px) + 4px gap
                     marginLeft: '0.25rem',
                     marginRight: '0.25rem',
-                    marginBottom: '0px', // Minimal bottom gap ("reduced height")
+                    marginBottom: '0px',
                     borderRadius: '10px',
                     border: '2px solid #000000',
                     background: '#ffffff',
-                    height: 'calc(100vh - 74px - 0px)', // Exact fit
+                    height: 'calc(100vh - 56px)',
                     position: 'relative',
                     overflowY: 'auto',
                     overflowX: 'hidden',

@@ -4,8 +4,9 @@ import React from 'react';
 import { useDevice } from '@/contexts/DeviceContext';
 import SectionWrapper from '@/components/SectionWrapper';
 import ProjectCard from '@/components/ProjectCard';
+import Button from '@/components/Button';
 
-const projects = [
+const featuredProjects = [
     {
         title: 'FinTrack Pro',
         category: 'Fintech',
@@ -26,27 +27,6 @@ const projects = [
         description: 'Smart fleet management system optimizing routes, fuel efficiency, and carbon emissions tracking.',
         tags: ['React Native', 'Python', 'ML', 'GCP'],
         color: '#06b6d4',
-    },
-    {
-        title: 'LearnHub',
-        category: 'EdTech',
-        description: 'Interactive e-learning platform with adaptive content delivery and progress tracking.',
-        tags: ['Vue.js', 'Django', 'Redis', 'Azure'],
-        color: '#f59e0b',
-    },
-    {
-        title: 'ShopSphere',
-        category: 'E-Commerce',
-        description: 'Headless commerce platform with AI-powered recommendations and omnichannel support.',
-        tags: ['Next.js', 'GraphQL', 'Stripe', 'Vercel'],
-        color: '#ec4899',
-    },
-    {
-        title: 'SecureVault',
-        category: 'Cybersecurity',
-        description: 'Enterprise-grade password management and digital identity protection system.',
-        tags: ['Rust', 'React', 'Zero-Knowledge', 'AWS'],
-        color: '#10b981',
     },
 ];
 
@@ -95,7 +75,7 @@ const ProjectsSection: React.FC = () => {
                     gap: '1.5rem',
                 }}
             >
-                {projects.map((p, i) => (
+                {featuredProjects.map((p, i) => (
                     <ProjectCard
                         key={p.title}
                         title={p.title}
@@ -106,6 +86,19 @@ const ProjectsSection: React.FC = () => {
                         delay={0.1 + i * 0.1}
                     />
                 ))}
+            </div>
+
+            {/* View all CTA */}
+            <div
+                className="animate-fade-in-up delay-400"
+                style={{
+                    textAlign: 'center',
+                    marginTop: '2.5rem',
+                }}
+            >
+                <Button variant="outline" size="md" href="/projects">
+                    View All Projects →
+                </Button>
             </div>
         </SectionWrapper>
     );

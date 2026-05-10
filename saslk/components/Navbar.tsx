@@ -10,11 +10,11 @@ const navLinks = [
     { label: 'Home', href: '/#hero' },
     { label: 'About', href: '/#about' },
     { label: 'Services', href: '/#services' },
-    { label: 'Projects', href: '/#projects' },
-    { label: 'Pricing', href: '/#pricing' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Partners', href: '/#partners' },
     { label: 'Payment', href: '/payment' },
     { label: 'Team', href: '/#team' },
-    { label: 'Contact', href: '/#contact' },
+    { label: 'Contact', href: '/contact' },
 ];
 
 const Navbar: React.FC = () => {
@@ -41,7 +41,8 @@ const Navbar: React.FC = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '1rem 2rem',
+        padding: '0 2rem',
+        height: '52px',
     };
 
     const logoStyle: React.CSSProperties = {
@@ -54,20 +55,29 @@ const Navbar: React.FC = () => {
 
     const linkStyle: React.CSSProperties = {
         color: 'var(--text-secondary)',
-        fontSize: '0.92rem',
-        fontWeight: 500,
-        transition: 'color var(--transition-fast)',
+        fontSize: '1.05rem',
+        fontWeight: 600,
         cursor: 'pointer',
         position: 'relative',
+        textDecoration: 'none',
+        backgroundImage: 'linear-gradient(90deg, #00FFFF, #FF00FF)',
+        backgroundSize: '0% 2px',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: '0 100%',
+        transition: 'background-size 0.25s ease, color 0.2s ease',
+        paddingBottom: '2px',
     };
 
     const ctaStyle: React.CSSProperties = {
         background: '#000000',
         color: '#ffffff',
-        padding: '0.6rem 1.5rem',
+        padding: '0.8rem 1.75rem',
         borderRadius: 'var(--radius-full)',
-        fontSize: '0.9rem',
+        fontSize: '1rem',
         fontWeight: 600,
+        lineHeight: 1,
+        display: 'flex',
+        alignItems: 'center',
         border: 'none',
         cursor: 'pointer',
         transition: 'all var(--transition-base)',
@@ -126,18 +136,18 @@ const Navbar: React.FC = () => {
         <>
             <nav style={navStyle}>
                 <div style={containerStyle}>
-                    <Link href="/#hero" style={{ display: 'block' }}>
+                    <Link href="/#hero" style={{ display: 'flex', alignItems: 'center', lineHeight: 0 }}>
                         <img
                             src="/logo.png"
                             alt="SASLK"
                             style={{
-                                height: '40px',
+                                height: '35px',
                                 width: 'auto',
+                                display: 'block',
                                 transition: 'all 0.3s ease',
-                                filter: 'grayscale(100%) brightness(0)', // Default: Pure Black Silhouette
+                                filter: 'grayscale(100%) brightness(0)',
                             }}
                             onMouseEnter={(e) => {
-                                // Hover: Neon Gradient Glow effect
                                 e.currentTarget.style.filter = 'drop-shadow(0 0 2px #00FFFF) drop-shadow(0 0 5px #FF00FF)';
                             }}
                             onMouseLeave={(e) => {
@@ -155,10 +165,10 @@ const Navbar: React.FC = () => {
                                         href={link.href}
                                         style={linkStyle}
                                         onMouseEnter={(e) => {
-                                            e.currentTarget.style.color = 'var(--text-primary)';
+                                            e.currentTarget.style.backgroundSize = '100% 2px';
                                         }}
                                         onMouseLeave={(e) => {
-                                            e.currentTarget.style.color = 'var(--text-secondary)';
+                                            e.currentTarget.style.backgroundSize = '0% 2px';
                                         }}
                                     >
                                         {link.label}
@@ -166,7 +176,7 @@ const Navbar: React.FC = () => {
                                 ))}
                             </div>
                             <Link
-                                href="/#contact"
+                                href="/contact"
                                 style={ctaStyle}
                                 onMouseEnter={(e) => {
                                     e.currentTarget.style.background = 'var(--gradient-brand-hover)';
@@ -225,7 +235,7 @@ const Navbar: React.FC = () => {
                         </Link>
                     ))}
                     <Link
-                        href="/#contact"
+                        href="/contact"
                         onClick={() => setMenuOpen(false)}
                         style={{ ...ctaStyle, fontSize: '1.1rem', padding: '0.8rem 2rem', marginTop: '1rem' }}
                     >
