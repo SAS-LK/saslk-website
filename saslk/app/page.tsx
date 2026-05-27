@@ -10,7 +10,7 @@ import MaintenancePage from '@/components/MaintenancePage';
 
 // ─── Toggle maintenance mode here ────────────────────────────────────────────
 // Set to `true` to show the maintenance page, `false` to show the normal site.
-const MAINTENANCE_MODE = false;
+const MAINTENANCE_MODE = true;
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function Home() {
